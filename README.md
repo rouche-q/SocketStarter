@@ -4,8 +4,11 @@ Create your own TCP server in C with this starter pack
 # Test it !
 
 git clone git@github.com:rouche-q/SocketStarter.git
+
 cd SocketStarter/
+
 make
+
 ./server [PORT]
 
 *** Open a new Terminal ***
