@@ -1,13 +1,3 @@
-/*
-** my_irc.h for my_irc in /home/rouche_q/rendu/PSU_2016_myirc/include/
-**
-** Made by Quentin Rouchet
-** Login   <rouche_q@epitech.eu>
-**
-** Started on  Mon May 22 22:47:45 2017 Quentin Rouchet
-** Last update	Wed May 24 17:07:49 2017 Full Name
-*/
-
 #ifndef _SOCKETSTARTER_H
 #	define _SOCKETSTARTER_H
 
