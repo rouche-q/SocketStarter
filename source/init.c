@@ -1,13 +1,3 @@
-/*
-** init.c for my_ftp in /home/rouche_q/rendu/PSU_2016_myftp/source/
-**
-** Made by Quentin Rouchet
-** Login   <rouche_q@epitech.eu>
-**
-** Started on  Sat May 13 19:02:28 2017 Quentin Rouchet
-** Last update	Wed May 24 17:07:25 2017 Full Name
-*/
-
 #include "SocketStarter.h"
 
 struct sockaddr_in initPortServer(int port)
