@@ -21,6 +21,7 @@ int main(int argc, char ** argv)
   server.fd_socket = createSocket();									/* Create the socket (man socket)*/
   server.port = getPort(argv[1]);
   server.s_in = initPortServer(server.port);
+  server.s_in_size = (socklen_t)sizeof(server.s_in);
   bindSocket(server.fd_socket, server.s_in);			 		/* Bind a socket (man bind) */
   listenSocket(server.fd_socket); 										/* Start to listen for incomming connexion*/
   while (1) 																					/*  Use this infinite loop to accept multiple connection*/
