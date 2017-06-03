@@ -1,37 +1,33 @@
-CC	=	gcc
+CC		=	gcc
 
-RM	=	rm -rf
+RM		=	rm -rf
 
-SDIR	=	source/
+SDIR	=	sources/
 
-IDIR	=	include/
+IDIR	=	includes/
 
-CFLAGS	+=	-Wextra -Wall -Werror -ansi -pedantic -I$(IDIR) -g3
+CFLAGS	+=	-W -Wall -Wextra -Werror -ansi -pedantic -I$(IDIR) -g3
 
-LDFLAGS	=
-LDFLAGS +=
+NAME	= 	server
 
-NAME	= server
-
-
-SRCS	=	$(SDIR)main.c\
-				$(SDIR)socket.c\
-				$(SDIR)init.c\
-				$(SDIR)dowhatyouwant.c\
+SRCS	=	$(SDIR)main.c 			\
+			$(SDIR)socket.c 		\
+			$(SDIR)init.c 			\
+			$(SDIR)dowhatyouwant.c	\
 
 OBJS	=	$(SRCS:.c=.o)
 
-all	:	$(NAME)
+all:		$(NAME)
 
-$(NAME)	:	$(OBJS)
-		$(CC) $(OBJS) $(LDFLAGS) -o $(NAME)
+$(NAME):	$(OBJS)
+			$(CC) $(OBJS) $(LDFLAGS) -o $(NAME)
 
-clean	:
-		$(RM) $(OBJS)
+clean:
+			$(RM) $(OBJS)
 
-fclean	:	clean
-		$(RM) $(NAME)
+fclean:		clean
+			$(RM) $(NAME)
 
-re	:	fclean all
+re:			fclean all
 
-.PHONY	:	all clean fclean re
+.PHONY:		all clean fclean re
