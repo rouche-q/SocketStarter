@@ -13,6 +13,7 @@ Clone
 Compile and start
 
 `make`
+
 `./server [PORT]`
 
 Test
