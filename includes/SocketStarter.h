@@ -1,45 +1,57 @@
-#ifndef _SOCKETSTARTER_H
-#	define _SOCKETSTARTER_H
+#ifndef _SOCKETSTARTER_H_
+#	define _SOCKETSTARTER_H_
 
-/* ##################
-** #### INCLUDE ####
-** ##################
+/*
+**  INCLUDES
 */
 
 #include <stdio.h>
+#include <netdb.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
 #include <sys/types.h>
-#include <sys/socket.h>
-#include <netdb.h>
-#include <netinet/in.h>
 #include <arpa/inet.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
 
-typedef struct s_server {
-  int fd_socket;
-  int port;
-  struct sockaddr_in s_in;
-  struct sockaddr_in s_in_client;
-  socklen_t s_in_size;
-	int client_fd;
-}              t_server;
-
-/* ##################
-** #### FUNCTION ####
-** ##################
+/*
+**  STRUCTURES
 */
 
-int createSocket();
-int bindSocket(int fd, struct sockaddr_in s_in);
-int listenSocket(int fd);
-int acceptSocket(int fd, struct sockaddr_in s_in_client, socklen_t s_in_size);
-int connectSocket(int fd, struct sockaddr_in s_in);
+typedef struct 				s_server
+{
+  int 								port;
+	int 								fd_socket;
+	int 								fd_client;
+	socklen_t 					s_in_size;
+  struct sockaddr_in	s_in;
+  struct sockaddr_in 	s_in_client;
+}              				t_server;
 
-struct sockaddr_in initPortServer(int port);
+/*
+**  PROTOTYPES
+*/
 
-int getPort(char *port);
+/*  main.c  */
 
-void doWhatYouWant(t_server);
+int			usage(char *bin_name);
 
-#endif /* !_MY_IRC */
+/*  init.c  */
+
+int									getPort(char *port);
+struct sockaddr_in	initPortServer(int port);
+
+/*  socket.c  */
+
+int 		createSocket();
+int 		bindSocket(int fd, struct sockaddr_in s_in);
+int 		listenSocket(int fd);
+int 		acceptSocket(int fd, struct sockaddr_in s_in_client, socklen_t s_in_size);
+int 		connectSocket(int fd, struct sockaddr_in s_in);
+
+/*  dowhatyouwant.c  */
+
+void 		doWhatYouWant(t_server);
+
+#endif /* !_SOCKETSTARTER_H_ */
