@@ -1,17 +1,19 @@
 # SocketStarter
+
 Create your own TCP server in C with this starter pack
 
 # Test it !
 
 Clone
-`git clone git@github.com:rouche-q/SocketStarter.git
 
-cd SocketStarter/`
+`git clone git@github.com:rouche-q/SocketStarter.git`
 
-Compile and starte
-`make
+`cd SocketStarter/`
 
-./server [PORT]`
+Compile and start
+
+`make`
+`./server [PORT]`
 
 Test
 
